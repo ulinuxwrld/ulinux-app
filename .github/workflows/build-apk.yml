@@ -3,7 +3,7 @@ name: Compilar APK Ulinux
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch: # Ativa o botão manual no painel do GitHub!
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,22 +24,26 @@ jobs:
         distribution: 'zulu'
         java-version: '17'
 
-    - name: Criar arquivos do Capacitor fake para passar no trator
+    - name: Criar estrutura inicial do Capacitor
       run: |
         echo '{"appId":"com.ulinux.ofertas","appName":"Ulinux Ofertas","webDir":"www"}' > capacitor.config.json
-        mkdir android
 
-    - name: Instalar Dependências e Capacitor
+    - name: Instalar Dependências Gerais
       run: |
         npm install
         npm install @capacitor/core @capacitor/cli @capacitor/android
 
-    - name: Forçar Criação do Projeto Android
+    - name: Criar e Configurar Projeto Android Nativo
       run: |
-        npx cap android add || true
+        npx cap add android
         npx cap sync
 
-    - name: Passar o Trator e Compilar o APK (Gradle)
+    - name: Dar Permissão ao Compilador (Gradle)
+      run: |
+        cd android
+        chmod +x gradlew
+
+    - name: Compilar o APK Oficial
       run: |
         cd android
         ./gradlew assembleDebug
