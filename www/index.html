@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ulinux Ofertas</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #e9ecef;
+      --primary-color: #28a745;
+      --accent-color: #6c5ce7;
+      --epic-blue: #0074e4;
+      --text-main: #212529;
+      --text-muted: #6c757d;
+      --magalu-blue: #0086ff;
+      --amazon-orange: #ff9900;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 15px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-left: 5px solid var(--accent-color);
+      padding-left: 10px;
+      margin: 25px 0 15px 0;
+    }
+
+    /* BANNER */
+    .banner-partner {
+      border: 3px solid var(--accent-color);
+      border-radius: 12px;
+      padding: 20px 15px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.1);
+    }
+    .banner-partner h2 { margin: 0 0 5px 0; font-size: 20px; color: var(--accent-color); }
+    .banner-partner p { margin: 0 0 15px 0; font-size: 14px; }
+    .tag-code {
+      display: inline-block;
+      background-color: #f1f0ff;
+      color: var(--epic-blue);
+      font-weight: 900;
+      font-size: 22px;
+      padding: 8px 25px;
+      border-radius: 8px;
+      border: 2px dashed var(--epic-blue);
+    }
+
+    /* BUSCA AMBIENTE MOBILE */
+    .container-busca-automatica {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px 15px;
+      text-align: center;
+    }
+    .container-busca-automatica p { font-size: 13px; color: var(--text-muted); margin: 0 0 15px 0; }
+    .form-busca-automatica { display: flex; flex-direction: column; gap: 10px; }
+    .form-busca-automatica input[type="text"] {
+      padding: 12px 15px;
+      border-radius: 25px;
+      border: 1px solid #ced4da;
+      font-size: 16px;
+      outline: none;
+      color: #000;
+      background-color: #fff;
+    }
+    .select-filtro-gamer {
+      padding: 12px;
+      border-radius: 25px;
+      border: 1px solid #ced4da;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .botoes-busca-group { display: flex; gap: 10px; }
+    .botoes-busca-group button {
+      flex: 1;
+      border: none;
+      padding: 14px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .btn-busca-magalu { background-color: var(--magalu-blue); }
+    .btn-busca-amazon { background-color: var(--amazon-orange); color: #111 !important; }
+
+    /* CUPONS */
+    .card-cupom {
+      background-color: var(--card-bg);
+      border: 2px dashed #ced4da;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .card-cupom h3 { font-size: 16px; margin: 0 0 5px 0; }
+    .card-cupom p { font-size: 13px; margin: 0 0 15px 0; color: var(--text-muted); }
+    .btn-cupom-magalu {
+      display: block;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    /* ACHADOS DO MERCADO LIVRE */
+    .item-promocao {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .item-promocao h3 { font-size: 15px; margin: 0 0 5px 0; }
+    .item-promocao p { font-size: 13px; color: var(--text-muted); margin: 0 0 12px 0; }
+    .btn-promo {
+      display: block;
+      background-color: #ffffff;
+      color: var(--epic-blue);
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      border: 1px solid #ced4da;
+    }
+
+    /* NEWSLETTER */
+    .secao-newsletter {
+      background-color: #f1f3f5;
+      border-radius: 12px;
+      padding: 25px 15px;
+      text-align: center;
+      margin-top: 25px;
+    }
+    .secao-newsletter h2 { font-size: 16px; margin: 0 0 5px 0; }
+    .secao-newsletter p { font-size: 12px; color: var(--text-muted); margin: 0 0 15px 0; }
+    .form-newsletter { display: flex; flex-direction: column; gap: 10px; }
+    .form-newsletter input { padding: 12px; border-radius: 25px; border: 1px solid #ced4da; font-size: 14px; padding-left: 15px; color: #000; background-color: #fff; }
+    .form-newsletter button { background-color: var(--accent-color); color: white; border: none; padding: 12px; border-radius: 25px; font-weight: bold; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <section class="banner-partner">
+    <h2>🎮 APOIE UM CRIADOR</h2>
+    <p>Use o código na loja de itens para ajudar o canal!</p>
+    <div class="tag-code">ULINUX</div>
+  </section>
+
+  <div class="container-busca-automatica">
+    <p>Compare preços nas maiores lojas direto do celular!</p>
+    <form class="form-busca-automatica" id="formBusca">
+      <input type="text" id="inputBuscaGamer" placeholder="Buscar Cadeira, Mouse, Headset..." required />
+      <select id="selectFiltroGamer" class="select-filtro-gamer">
+        <option value="relevancia">⭐ Mais Relevantes</option>
+        <option value="menor_preco">💰 Menor Preço</option>
+      </select>
+      <div class="botoes-busca-group">
+        <button type="button" class="btn-busca-magalu" id="btnMagalu">Na Magalu</button>
+        <button type="button" class="btn-busca-amazon" id="btnAmazon">Na Amazon</button>
+      </div>
+    </form>
+  </div>
+
+  <h2 class="section-title">🎟️ Cupons Magazine Ulinux</h2>
+  <div class="card-cupom">
+    <h3>Informática com até R$100 OFF</h3>
+    <a class="btn-cupom-magalu" href="https://www.magazinevoce.com.br/magazineulinux/busca/238030600+240058900+240941200+241066200+240941100+237304800+240626400+240445700+238894200+241040100+240629100+240059400+238469100+238851600+240608800/">Ativar Cupom ➔</a>
+  </div>
+
+  <h2 class="section-title">🛍️ Achados de Fortnite</h2>
+  <div class="item-promocao">
+    <h3>LEGO Fortnite Llama Colecionável</h3>
+    <p>691 Peças - Linha Oficial LEGO</p>
+    <a class="btn-promo" href="https://www.mercadolivre.com.br/brinquedo-de-montar-fortnite-77071-lhama-691-pecas-lego/p/MLB41805685">Ver no Mercado Livre ➔</a>
+  </div>
+
+  <section class="secao-newsletter">
+    <h2>⚡ Drops de Descontos</h2>
+    <p>Inscreva seu e-mail para alertas e sorteios.</p>
+    <form class="form-newsletter" id="newsForm">
+      <input id="newsEmail" placeholder="Seu melhor e-mail" required type="email" />
+      <button id="newsBtn" type="submit">CADASTRAR APP</button>
+    </form>
+  </section>
+
+  <script>
+    function gerarUrlDestino(plataforma, termo, filtro) {
+      if (plataforma === 'magalu') {
+        var termoLimpo = termo.trim().replace(/\s+/g, '+');
+        var urlMagalu = "https://www.magazinevoce.com.br/magazineulinux/busca/" + termoLimpo + "/";
+        if (filtro === "menor_preco") urlMagalu += "?ordenacao=pe";
+        return urlMagalu;
+      } 
+      if (plataforma === 'amazon') {
+        var termoFormatado = encodeURIComponent(termo.trim());
+        var urlAmazon = "https://www.amazon.com.br/s?k=" + termoFormatado + "&tag=ulinux-20";
+        if (filtro === "menor_preco") urlAmazon += "&s=price-asc-rank";
+        return urlAmazon;
+      }
+      return "#";
+    }
+
+    // No celular, forçamos o link a abrir fora do app usando o navegador do Android
+    function abrirNoNavegadorCelular(url) {
+      if(url && url !== "#") {
+        window.open(url, '_system'); // Comando clássico de WebView do Android
+      }
+    }
+
+    // Intercepta cliques de links normais e cupons
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.tagName === 'A') {
+        e.preventDefault();
+        abrirNoNavegadorCelular(e.target.href);
+      }
+    });
+
+    document.getElementById('btnMagalu').addEventListener('click', function() {
+      var termo = document.getElementById('inputBuscaGamer').value;
+      var filtro = document.getElementById('selectFiltroGamer').value;
+      if (termo) abrirNoNavegadorCelular(gerarUrlDestino('magalu', termo, filtro));
+    });
+
+    document.getElementById('btnAmazon').addEventListener('click', function() {
+      var termo = document.getElementById('inputBuscaGamer').value;
+      var filtro = document.getElementById('selectFiltroGamer').value;
+      if (termo) abrirNoNavegadorCelular(gerarUrlDestino('amazon', termo, filtro));
+    });
+
+    document.getElementById('formBusca').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var termo = document.getElementById('inputBuscaGamer').value;
+      var filtro = document.getElementById('selectFiltroGamer').value;
+      if (termo) abrirNoNavegadorCelular(gerarUrlDestino('magalu', termo, filtro));
+    });
+
+    // API de cadastro (Envia do celular direto pra sua planilha do Sheets!)
+    document.getElementById('newsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var emailInput = document.getElementById('newsEmail').value;
+      var submitBtn = document.getElementById('newsBtn');
+      var apiWebhookUrl = "https://script.google.com/macros/s/AKfycbxpidL-oHHgmqX3c4w6Mgh3hwEVjhrQgTtyMegtsVPbX2EiMuE7k1JJb5HrGpr310sxbQ/exec"; 
+
+      if (emailInput) {
+        submitBtn.innerText = "GRAVANDO...";
+        submitBtn.disabled = true;
+        var urlComParametro = apiWebhookUrl + "?email=" + encodeURIComponent(emailInput);
+
+        fetch(urlComParametro, { method: "POST", mode: "no-cors" })
+        .then(function() {
+          submitBtn.innerText = "CADASTRADO! 🎉";
+          submitBtn.style.backgroundColor = "#28a745";
+          alert("Sucesso! E-mail salvo direto do celular.");
+          document.getElementById('newsEmail').value = "";
+        })
+        .catch(function() {
+          submitBtn.innerText = "ERRO";
+          submitBtn.style.backgroundColor = "#dc3545";
+        })
+        .finally(function() {
+          setTimeout(function() {
+            submitBtn.innerText = "CADASTRAR APP";
+            submitBtn.style.backgroundColor = "";
+            submitBtn.disabled = false;
+          }, 4000);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
